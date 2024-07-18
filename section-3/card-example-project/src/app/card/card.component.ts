@@ -7,11 +7,15 @@ import {Component} from '@angular/core';
 })
 export class CardComponent {
 
-  type = 'Simple';
-  price = 100.0;
+  plan = {
+    infos: {
+      type: 'Simple',
+      price: 1000,
+    }
+  }
 
 
   get fullPrice() {
-    return `$${this.price}/Month`
+    return `$${this.plan.infos.price}/Month`
   }
 }
