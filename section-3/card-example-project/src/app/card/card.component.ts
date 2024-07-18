@@ -9,4 +9,9 @@ export class CardComponent {
 
   type = 'Simple';
   price = 100.0;
+
+
+  get fullPrice() {
+    return `$${this.price}/Month`
+  }
 }
