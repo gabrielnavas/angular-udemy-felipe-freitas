@@ -20,18 +20,3 @@
     font-size: 40px;
   }
 }
-
-.card-cancel-button {
-  background-color: black;
-
-  &:hover {
-    background-color: white;
-    color: lightcoral;
-  }
-
-  &:active {
-    color: lightcoral;
-    font-weight: bold;
-    background-color: white;
-  }
-}
