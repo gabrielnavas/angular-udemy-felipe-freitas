@@ -5,7 +5,7 @@ import {Component} from '@angular/core';
   template: `
     <div class="card-cancel-button">Cancel</div>
   `,
-  styleUrls: ['./card-button-cancel.component.scss', "./card-button-cancel.component-2.scss"],
+  styleUrls: ['../../card/card.component.scss', "./card-button-cancel.component-2.scss"],
 })
 export class CardButtonCancelComponent {
 
