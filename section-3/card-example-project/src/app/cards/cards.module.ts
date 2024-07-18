@@ -4,6 +4,7 @@ import {CardComponent} from "../card/card.component";
 import {CardPurpleComponent} from "../card-purple/card-purple.component";
 import {CardButtonComponent} from "../card-button/card-button.component";
 import {CardPurpleButtonComponent} from "../card-purple-button/card-purple-button.component";
+import { CardButtonCancelComponent } from './card-button-cancel/card-button-cancel.component';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import {CardPurpleButtonComponent} from "../card-purple-button/card-purple-butto
     CardComponent,
     CardPurpleComponent,
     CardButtonComponent,
-    CardPurpleButtonComponent
+    CardPurpleButtonComponent,
+    CardButtonCancelComponent
   ],
   imports: [
     CommonModule
