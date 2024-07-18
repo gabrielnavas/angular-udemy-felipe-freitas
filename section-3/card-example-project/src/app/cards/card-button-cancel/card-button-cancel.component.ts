@@ -5,29 +5,7 @@ import {Component} from '@angular/core';
   template: `
     <div class="card-cancel-button">Cancel</div>
   `,
-  styles: [`
-    .card-cancel-button {
-      font-size: 16px;
-      text-align: center;
-      margin-top: 10px;
-      border-radius: 25px;
-      background-color: lightcoral;
-      color: white;
-      cursor: pointer;
-      padding: 10px;
-
-      &:hover {
-        background-color: white;
-        color: lightcoral;
-      }
-
-      &:active {
-        color: lightcoral;
-        font-weight: bold;
-        background-color: white;
-      }
-    }
-  `]
+  styleUrls: ['./card-button-cancel.component.scss', "./card-button-cancel.component-2.scss"],
 })
 export class CardButtonCancelComponent {
 
