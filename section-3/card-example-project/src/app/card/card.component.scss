@@ -21,6 +21,6 @@
   }
 }
 
-::ng-deep .card-cancel-button {
+:host ::ng-deep .card-cancel-button {
   background-color: red !important;
 }
