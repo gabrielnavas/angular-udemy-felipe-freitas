@@ -11,7 +11,10 @@
   (keyup)="handleKeyUp($event)"
 >
 
-<button (click)="enableInput()">Enable</button>
+<button 
+  (click)="enableInput()"
+  [style.backgroundColor]="'red'"
+>Enable</button>
 <button (click)="diasbleInput()">Disable</button>
 
 <br>
