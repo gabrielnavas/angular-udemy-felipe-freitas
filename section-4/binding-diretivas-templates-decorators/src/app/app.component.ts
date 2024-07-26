@@ -58,4 +58,11 @@ export class AppComponent {
       this.colorDiv = "black";
     }
   }
+
+  onButtonUpdateStyleObjClick() {
+    // this.styleObject.height = '500px'; // isso não funciona
+    const newStyleObject = {...this.styleObject};
+    newStyleObject.height = '500px';
+    this.styleObject = newStyleObject;
+  }
 }
