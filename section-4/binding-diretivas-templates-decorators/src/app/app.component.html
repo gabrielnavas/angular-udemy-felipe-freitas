@@ -1,9 +1,14 @@
 <div
-  [classList]="classNameExample" >
+  [classList]="classNameExample">
   I'm green
 </div>
 
-<input [value]="valueProps" [type]="typeProps" [disabled]="inputDisabled">
+<input 
+  [value]="valueProps" 
+  [type]="typeProps" 
+  [disabled]="inputDisabled"
+  (keyup)="handleKeyUp($event)"
+>
 
 <button (click)="enableInput()">Enable</button>
 <button (click)="diasbleInput()">Disable</button>
@@ -12,3 +17,5 @@
 
 <button (click)="setInputPasswordType()">Password Type</button>
 <button (click)="setInputTextType()">Text Type</button>
+
+<button onclick="alert('hello!')">Say Hello</button>

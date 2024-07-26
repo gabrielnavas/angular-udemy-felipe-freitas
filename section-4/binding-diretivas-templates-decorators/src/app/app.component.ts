@@ -31,4 +31,10 @@ export class AppComponent {
   setInputTextType() {
     this.typeProps = 'text';
   }
+
+  handleKeyUp(event: Event) {
+    const value = (event.target as HTMLInputElement).value;
+    this.valueProps = value;
+    console.log(this.valueProps);
+  }
 }
