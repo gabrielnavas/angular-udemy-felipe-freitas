@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   classNameExample = 'container'
   valueProps = 'im green';
   typeProps = 'password';
@@ -13,5 +14,13 @@ export class AppComponent {
 
   change() {
     this.valueProps = 'changed!';
+  }
+
+  enableInput() {
+    this.inputDisabled = false;
+  }
+
+  diasbleInput() {
+    this.inputDisabled = true;
   }
 }
