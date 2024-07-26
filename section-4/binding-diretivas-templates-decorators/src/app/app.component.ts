@@ -15,6 +15,7 @@ export class AppComponent {
   buttonTitle = "Iam a title and Iam a attribute on text"
   buttonValue = "Iam a title and Iam a attribute on text"
   buttonDisabled = false
+  styleHeightButton = '140';
 
   colorDiv = "black";
 
