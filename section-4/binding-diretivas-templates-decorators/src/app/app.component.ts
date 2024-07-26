@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   classNameExample = 'container'
+  valueProps = 'im green';
+
+  change() {
+    this.valueProps = 'changed!';
+  }
 }
