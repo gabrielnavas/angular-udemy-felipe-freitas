@@ -19,3 +19,7 @@
 <button (click)="setInputTextType()">Text Type</button>
 
 <button onclick="alert('hello!')">Say Hello</button>
+
+<button [attr.title]="buttonTitle">above in mine</button>
+<button [attr.disabled]="buttonDisabled ? true : null">above in mine 2</button>
+<button (click)="onButtonClick()">Change Button State</button>

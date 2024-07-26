@@ -12,6 +12,10 @@ export class AppComponent {
   typeProps = 'password';
   inputDisabled = true;
 
+  buttonTitle = "Iam a title and Iam a attribute on text"
+  buttonValue = "Iam a title and Iam a attribute on text"
+  buttonDisabled = false
+
   change() {
     this.valueProps = 'changed!';
   }
@@ -36,5 +40,9 @@ export class AppComponent {
     const value = (event.target as HTMLInputElement).value;
     this.valueProps = value;
     console.log(this.valueProps);
+  }
+
+  onButtonClick() {
+    this.buttonDisabled = !this.buttonDisabled;
   }
 }
