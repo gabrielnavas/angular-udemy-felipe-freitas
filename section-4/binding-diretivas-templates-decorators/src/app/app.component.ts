@@ -16,6 +16,8 @@ export class AppComponent {
   buttonValue = "Iam a title and Iam a attribute on text"
   buttonDisabled = false
 
+  colorDiv = "black";
+
   change() {
     this.valueProps = 'changed!';
   }
@@ -44,5 +46,13 @@ export class AppComponent {
 
   onButtonClick() {
     this.buttonDisabled = !this.buttonDisabled;
+  }
+
+  onButtonChangeColorClick() {
+    if(this.colorDiv === "black") {
+      this.colorDiv = "white";
+    } else {
+      this.colorDiv = "black";
+    }
   }
 }

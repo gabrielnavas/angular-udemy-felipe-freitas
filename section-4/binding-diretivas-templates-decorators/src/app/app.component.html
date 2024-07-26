@@ -1,5 +1,6 @@
 <div
-  [classList]="classNameExample">
+  [classList]="classNameExample"
+  [style.color]="colorDiv">
   I'm green
 </div>
 
@@ -23,3 +24,6 @@
 <button [attr.title]="buttonTitle">above in mine</button>
 <button [attr.disabled]="buttonDisabled ? true : null">above in mine 2</button>
 <button (click)="onButtonClick()">Change Button State</button>
+
+<br>
+<button (click)="onButtonChangeColorClick()">Change color</button>
