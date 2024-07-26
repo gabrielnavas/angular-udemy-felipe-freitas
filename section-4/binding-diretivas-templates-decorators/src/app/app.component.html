@@ -21,10 +21,23 @@
 
 <br>
 
-<button (click)="setInputPasswordType()">Password Type</button>
-<button (click)="setInputTextType()">Text Type</button>
+<button 
+  (click)="setInputPasswordType()"
+  [style]="'background-color: cyan;'"
+  >
+  Password Type
+</button>
+<button 
+  (click)="setInputTextType()"
+  [style]="{width: '100px', backgroundColor: 'blue'}"
+>
+  Text Type
+</button>
 
-<button onclick="alert('hello!')">Say Hello</button>
+<button 
+  onclick="alert('hello!')"
+  [style]="styleObject"
+>Say Hello</button>
 
 <button [attr.title]="buttonTitle">above in mine</button>
 <button [attr.disabled]="buttonDisabled ? true : null">above in mine 2</button>

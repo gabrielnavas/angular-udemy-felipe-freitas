@@ -17,6 +17,8 @@ export class AppComponent {
   buttonDisabled = false
   styleHeightButton = '140';
 
+  styleObject = {height: '50px', backgroundColor: 'green'};
+
   colorDiv = "black";
 
   change() {
