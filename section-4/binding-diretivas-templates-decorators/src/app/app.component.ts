@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   classNameExample = 'container'
   valueProps = 'im green';
+  typeProps = 'password';
 
   change() {
     this.valueProps = 'changed!';
