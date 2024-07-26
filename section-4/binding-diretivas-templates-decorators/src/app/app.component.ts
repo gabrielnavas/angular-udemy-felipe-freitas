@@ -23,4 +23,12 @@ export class AppComponent {
   diasbleInput() {
     this.inputDisabled = true;
   }
+
+  setInputPasswordType() {
+    this.typeProps = 'password';
+  }
+
+  setInputTextType() {
+    this.typeProps = 'text';
+  }
 }
