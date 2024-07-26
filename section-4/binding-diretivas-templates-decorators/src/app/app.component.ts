@@ -9,6 +9,7 @@ export class AppComponent {
   classNameExample = 'container'
   valueProps = 'im green';
   typeProps = 'password';
+  inputDisabled = true;
 
   change() {
     this.valueProps = 'changed!';
