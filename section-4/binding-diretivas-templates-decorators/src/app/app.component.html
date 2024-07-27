@@ -47,3 +47,13 @@
 <button (click)="onButtonChangeColorClick()">Change color</button>
 
 <button (click)="onButtonUpdateStyleObjClick()">Update Style Obj</button>
+
+<button class="yellow-button">class binding</button>
+<button [class.red-button]="classBinding">class binding</button>
+
+<button [class]="{
+  'yellow-button': !yellowOrRed,
+  'red-button': yellowOrRed,
+}"
+(click)="yellowOrRed=!yellowOrRed"
+>class binding object</button>

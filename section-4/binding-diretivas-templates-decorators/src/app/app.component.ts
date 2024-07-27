@@ -21,6 +21,10 @@ export class AppComponent {
 
   colorDiv = "black";
 
+  classBinding=true
+
+  yellowOrRed=true
+
   change() {
     this.valueProps = 'changed!';
   }
