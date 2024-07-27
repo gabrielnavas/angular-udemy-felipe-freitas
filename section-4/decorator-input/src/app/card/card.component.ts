@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-  @Input() title: string='';
-  @Input() money: string='';
+  @Input('titleAlias') title: string = '';
+  @Input({ required: true, alias: 'moneyAlias', transform: (value: string) => `${value} modified` }) money: string = '';
 }
