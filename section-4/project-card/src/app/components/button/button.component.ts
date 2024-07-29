@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './button.component.scss'
 })
 export class ButtonComponent {
+  @Input({ required: true, alias: 'text' }) buttonText = "";
+  @Input({ required: true, alias: 'style' }) buttonStyle: 'white' | 'purple' = 'white'; 
+  @Input({ alias: 'disabled' }) isDisabled = false;
+  @Output('cliked') onButtonClickedEmitter = new EventEmitter<void>()
 
+  onButtonClicked() {
+    this.onButtonClickedEmitter.emit();
+  }
 }

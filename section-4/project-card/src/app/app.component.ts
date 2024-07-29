@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'project-card';
+
+  test($event: any) {
+    console.log($event);
+  }
 }
