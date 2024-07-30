@@ -1,0 +1,8 @@
+<button (click)="increaseFontSize()">+A</button>
+<button (click)="decreaseFontSize()">-A</button>
+
+<div [ngStyle]="{
+  'font-size': fontSize + 'px',
+  'color': textColor,
+}">Sou um H1</div>
+
