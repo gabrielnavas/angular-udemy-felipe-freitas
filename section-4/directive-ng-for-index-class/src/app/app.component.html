@@ -5,11 +5,15 @@
     let i = index; 
     let isOdd = odd;
     let isEven = even;
+    let isFirst = first;
+    let isLast = last;
   "
   [class.item--odd]="isOdd">
-  <div *ngIf="isOdd"><b>is odd</b></div>
-  <div *ngIf="isEven"><b>is even</b></div>
   <div>index={{ i }}</div>
   <div>{{ person.name }}</div>
   <div>{{ person.age }} anos</div>
+  <div *ngIf="isFirst" [class.item--isFirst]="isFirst"><b>is first element</b></div>
+  <div *ngIf="isLast" [class.item--isLast]="isLast"><b>is last element</b></div>
+  <div *ngIf="isOdd"><b>is odd</b></div>
+  <div *ngIf="isEven"><b>is even</b></div>
 </div>

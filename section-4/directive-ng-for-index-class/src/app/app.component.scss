@@ -7,4 +7,14 @@
   &--odd {
     background-color: lightslategray;
   }
+
+  &--isFirst {
+    background-color: lightcoral;
+    padding: 2px;
+  }
+
+  &--isLast {
+    background-color: lightgreen;
+    padding: 2px;
+  }
 }
