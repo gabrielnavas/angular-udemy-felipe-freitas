@@ -1,0 +1,37 @@
+<div 
+  class="item" 
+  *ngFor="
+    let person of persons;
+    let i = index;
+  ">
+    <app-person
+      *ngIf="personIndexSelected !== i; else selectedItem" 
+      [person]="{
+        id: person.id,
+        name: person.name,
+        age: person.age
+      }"
+      (onClick)="selectPersonByIndex(i)"
+      [index]="i">
+    </app-person>
+</div>
+
+
+<ng-template #selectedItem>
+  <div class="item--selected" *ngIf="personSelected">
+    <span>Item selected</span>
+    <app-person
+      [person]="{
+        id: personSelected.id,
+        name: personSelected.name,
+        age: personSelected.age
+      }"
+      [index]="personIndexSelected">
+    </app-person>
+    <button 
+      class="item--selected--button" 
+      (click)="cancelItemSelected()">
+      Cancel
+    </button>
+  </div>
+</ng-template>
