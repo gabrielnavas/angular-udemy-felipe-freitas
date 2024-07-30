@@ -1,10 +1,16 @@
-<div 
-  class="item" 
-  *ngFor="
+<div class="item--selected" *ngIf="personSelected">
+  <span>Item selected</span>
+  <div class="item">
+    <div>{{ personSelected.name }}</div>
+    <div>{{ personSelected.age }} anos</div>
+  </div>
+  <button class="item--selected--button" (click)="cancelItemSelected()">Cancel</button>
+</div>
+
+<div class="item" *ngFor="
     let person of persons;
     let i = index;
-  "
-  (click)="selectPersonByIndex(i)">
+  " (click)="selectPersonByIndex(i)">
   <div>index={{ i }}</div>
   <div>{{ person.name }}</div>
   <div>{{ person.age }} anos</div>

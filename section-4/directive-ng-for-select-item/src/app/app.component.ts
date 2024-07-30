@@ -7,6 +7,9 @@ import { Person } from './Person';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  personSelected: Person | undefined = undefined;
+
   persons: Person[] = [
     { id: '1', name: 'John', age: 18 },
     { id: '2', name: 'Mary', age: 25 },
@@ -16,6 +19,12 @@ export class AppComponent {
   ]
 
   selectPersonByIndex(index: number) {
-    alert(index);
+    if (index >= 0 && index <= this.persons.length - 1) {
+      this.personSelected = this.persons[index];
+    }
+  }
+
+  cancelItemSelected() {
+    this.personSelected = undefined;
   }
 }

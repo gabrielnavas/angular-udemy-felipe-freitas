@@ -3,4 +3,18 @@
   border-bottom: 1px solid black;
   font-weight: 400;
   background-color: white;
+  cursor: pointer;
+  
+  &--selected {
+    background-color: lightsalmon;
+    padding: 5px;
+    font-weight: bold;
+  
+    &--button {
+      background-color: lightgray;
+      margin-top: 3px;
+      padding: 5px 10px;
+    }
+  }
+
 }
