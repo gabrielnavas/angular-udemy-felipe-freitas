@@ -1,0 +1,20 @@
+<!-- angular pipes -->
+<h1>{{ text | uppercase }}</h1>
+<h1>{{ text | lowercase }}</h1>
+<h1>{{ price | currency }}</h1>
+<h1>{{ tax | percent }}</h1>
+<h1>{{ person1 | json }}</h1>
+<h1>R${{ price | number: '0.0' : 'pt-BR' }}</h1>
+
+<!-- custom pipe -->
+<h2 [class]="person1.status | statusClass">
+  {{ person1.name }}
+</h2>
+
+<h2 [class]="person2.status | statusClass">
+  {{ person1.name }}
+</h2>
+
+<h2 [class]="person3.status | statusClass">
+  {{ person1.name }}
+</h2>
