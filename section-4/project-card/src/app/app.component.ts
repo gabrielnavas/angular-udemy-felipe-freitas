@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Card } from './Card';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'project-card';
+  simpleCard = new Card('Simple', 100.0, 'orange');
+  fullCard = new Card('Full', 200.0, 'purple');
 
-  test($event: any) {
-    console.log($event);
+  onCardButtonClicked() {
+    console.log('button clicked');
   }
 }

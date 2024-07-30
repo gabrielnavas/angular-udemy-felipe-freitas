@@ -10,7 +10,6 @@ export class CardComponent {
   @Input({ required: true }) price = 0.00;
   @Input({ alias: 'style' }) cardStyle: 'orange' | 'purple' = 'orange';
 
-  @Input({ required: true }) buttonText = "";
   @Output('cliked') buttonClikedEmitter = new EventEmitter();
 
   onCliked() {

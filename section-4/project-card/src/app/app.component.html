@@ -1,17 +1,15 @@
-<div class="container">
+<div class="cards-container">
   <app-card 
-    [planType]="'Simple'" 
-    [price]="100.00" 
-    [style]="'orange'" 
-    [buttonText]="'Simple'" 
-    (cliked)="test($event)" 
+    [planType]="simpleCard.type" 
+    [price]="simpleCard.price" 
+    [style]="simpleCard.style" 
+    (cliked)="onCardButtonClicked()" 
   ></app-card>
   
   <app-card 
-    [planType]="'Simple'" 
-    [price]="100.00" 
-    [style]="'purple'" 
-    [buttonText]="'Full'" 
-    (cliked)="test($event)" 
+    [planType]="fullCard.type" 
+    [price]="fullCard.price" 
+    [style]="fullCard.style" 
+    (cliked)="onCardButtonClicked()" 
   ></app-card>
 </div>
