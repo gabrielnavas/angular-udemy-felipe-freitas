@@ -1,2 +1,17 @@
-<app-button [text]="'Adquirir'" [style]="'white'" [disabled]="true" ></app-button>
-<app-button [text]="'Adquirir 2'" [style]="'purple'" (cliked)="test($event)" ></app-button>
+<app-card 
+  [planType]="'Simple'" 
+  [price]="100.00" 
+  [style]="'orange'" 
+  [buttonText]="'Simple'" 
+  [buttonStyle]="'white'"
+  (cliked)="test($event)" 
+></app-card>
+
+<app-card 
+  [planType]="'Simple'" 
+  [price]="100.00" 
+  [style]="'purple'" 
+  [buttonText]="'Full'" 
+  [buttonStyle]="'purple'"
+  (cliked)="test($event)" 
+></app-card>

@@ -1,1 +1,16 @@
-<p>card works!</p>
+<div 
+class="card"
+[class]="{
+  'card--orange': cardStyle === 'orange',
+  'card--purple': cardStyle === 'purple',
+}"
+>
+  <div class="card__plain card__item">Plan <b>{{ planType }}</b></div>
+  <div class="card__price card__item">${{ price.toFixed(2) }}/month</div>
+
+  <app-button 
+  [text]="buttonText" 
+  [style]="buttonStyle" 
+  (cliked)="onCliked()">
+  </app-button>
+</div>
