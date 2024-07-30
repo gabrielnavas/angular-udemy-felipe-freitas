@@ -1,15 +1,17 @@
-<app-card 
-  [planType]="'Simple'" 
-  [price]="100.00" 
-  [style]="'orange'" 
-  [buttonText]="'Simple'" 
-  (cliked)="test($event)" 
-></app-card>
-
-<app-card 
-  [planType]="'Simple'" 
-  [price]="100.00" 
-  [style]="'purple'" 
-  [buttonText]="'Full'" 
-  (cliked)="test($event)" 
-></app-card>
+<div class="container">
+  <app-card 
+    [planType]="'Simple'" 
+    [price]="100.00" 
+    [style]="'orange'" 
+    [buttonText]="'Simple'" 
+    (cliked)="test($event)" 
+  ></app-card>
+  
+  <app-card 
+    [planType]="'Simple'" 
+    [price]="100.00" 
+    [style]="'purple'" 
+    [buttonText]="'Full'" 
+    (cliked)="test($event)" 
+  ></app-card>
+</div>
