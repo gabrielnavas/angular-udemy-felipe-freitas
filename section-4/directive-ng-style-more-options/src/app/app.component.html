@@ -2,6 +2,7 @@
 <button (click)="decreaseFontSize()">-A</button>
 <button (click)="toggleTextFontColor()">Toggle Text Font Color</button>
 
+<!-- more legibility  -->
 <div 
   [ngStyle]="{
     'font-size': fontSize + 'px',
@@ -12,6 +13,7 @@
 
 <!-- OR -->
 
+<!-- more performatic -->
 <div 
   [style.font-size.px]="fontSize"
   [style.color]="textColor">
