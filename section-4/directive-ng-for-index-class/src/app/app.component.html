@@ -1,0 +1,15 @@
+<div 
+  class="item" 
+  *ngFor="
+    let person of persons; 
+    let i = index; 
+    let isOdd = odd;
+    let isEven = even;
+  "
+  [class.item--odd]="isOdd">
+  <div *ngIf="isOdd"><b>is odd</b></div>
+  <div *ngIf="isEven"><b>is even</b></div>
+  <div>index={{ i }}</div>
+  <div>{{ person.name }}</div>
+  <div>{{ person.age }} anos</div>
+</div>
