@@ -9,6 +9,7 @@ import { Person } from './Person';
 export class AppComponent {
 
   personSelected: Person | undefined = undefined;
+  personIndexSelected: number = -1;
 
   persons: Person[] = [
     { id: '1', name: 'John', age: 18 },
@@ -21,10 +22,12 @@ export class AppComponent {
   selectPersonByIndex(index: number) {
     if (index >= 0 && index <= this.persons.length - 1) {
       this.personSelected = this.persons[index];
+      this.personIndexSelected = index;
     }
   }
 
   cancelItemSelected() {
     this.personSelected = undefined;
+    this.personIndexSelected = -1;
   }
 }
