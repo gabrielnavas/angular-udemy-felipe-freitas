@@ -1,0 +1,9 @@
+<button (click)="setOrange()">to green</button>
+<button (click)="setGreen()">to orange</button>
+
+<h1 [ngClass]="{
+  'is-green': isGreen,
+  'is-orange': isOrange
+}">
+  Sou um H1
+</h1>
