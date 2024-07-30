@@ -1,0 +1,11 @@
+<ng-container *ngIf="isShow; then myTemplate; else myOtherTemplate"></ng-container>
+
+<ng-template #myTemplate>
+  <div style="background-color: green;">I'am a div</div>
+</ng-template>
+
+<ng-template #myOtherTemplate>
+  <div style="background-color: red;">I'am an other div</div>
+</ng-template>
+
+<button (click)="toggleIsShow()">Toggle</button>
