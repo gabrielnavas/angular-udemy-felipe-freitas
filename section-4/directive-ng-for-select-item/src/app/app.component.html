@@ -1,0 +1,11 @@
+<div 
+  class="item" 
+  *ngFor="
+    let person of persons;
+    let i = index;
+  "
+  (click)="selectPersonByIndex(i)">
+  <div>index={{ i }}</div>
+  <div>{{ person.name }}</div>
+  <div>{{ person.age }} anos</div>
+</div>
