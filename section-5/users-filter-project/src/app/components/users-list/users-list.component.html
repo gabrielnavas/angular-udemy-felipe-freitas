@@ -3,19 +3,19 @@
     <!-- Name Column -->
     <ng-container matColumnDef="nome">
       <th mat-header-cell *matHeaderCellDef> Nome </th>
-      <td mat-cell *matCellDef="let row" class="users-list__item" (click)="onSelectedElement(row)"> {{row.nome}} </td>
+      <td mat-cell *matCellDef="let row" class="users-list__item" (click)="onSelectedRow(row)">{{ row.nome }}</td>
     </ng-container>
   
     <!-- Date of Sign Column -->
     <ng-container matColumnDef="dataCadastro">
       <th mat-header-cell *matHeaderCellDef> Data de Cadastro </th>
-      <td mat-cell *matCellDef="let row" class="users-list__item" (click)="onSelectedElement(row)"> {{row.dataCadastro}} </td>
+      <td mat-cell *matCellDef="let row" class="users-list__item" (click)="onSelectedRow(row)">{{ row.dataCadastro }}</td>
     </ng-container>
   
     <!-- Status Column -->
     <ng-container matColumnDef="ativo">
       <th mat-header-cell *matHeaderCellDef> Status </th>
-      <td mat-cell *matCellDef="let row" class="users-list__item" (click)="onSelectedElement(row)"> {{row.ativo ? 'Ativo' : 'Inativo'}} </td>
+      <td mat-cell *matCellDef="let row" class="users-list__item" (click)="onSelectedRow(row)">{{ row.ativo ? 'Ativo' : 'Inativo' }}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

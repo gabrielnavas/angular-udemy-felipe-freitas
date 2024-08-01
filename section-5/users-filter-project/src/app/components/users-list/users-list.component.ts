@@ -14,7 +14,7 @@ export class UsersListComponent {
 
   @Output('onClickRow') onClickRowEmitt = new EventEmitter<IUser>();
 
-  onSelectedElement(user: IUser) {
+  onSelectedRow(user: IUser) {
     this.onClickRowEmitt.emit(user);
   }
 }

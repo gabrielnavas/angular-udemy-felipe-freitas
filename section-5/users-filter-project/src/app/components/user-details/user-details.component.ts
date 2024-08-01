@@ -8,7 +8,7 @@ import { IUser } from '../../interfaces/user/user.interface';
 })
 export class UserDetailsComponent {
 
-  @Input({ required: true }) userSelected: IUser = {} as IUser;
+  @Input({ required: true }) user: IUser = {} as IUser;
 
   @Output('onClickCloseUserDetails') onClickCloseUserDetailsEmitt = new EventEmitter<void>();
 
