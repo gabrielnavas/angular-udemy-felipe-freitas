@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IUser } from '../../interfaces/user/user.interface';
 
 @Component({
   selector: 'app-user-details',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class UserDetailsComponent {
 
+  @Input({ required: true }) userSelected: IUser = {} as IUser;
+
+  @Output('onClickCloseUserDetails') onClickCloseUserDetailsEmitt = new EventEmitter<void>();
+
+  closeUserDetails() {
+    this.onClickCloseUserDetailsEmitt.emit();
+  }
 }

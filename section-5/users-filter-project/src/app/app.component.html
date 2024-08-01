@@ -4,10 +4,14 @@
       <app-filter></app-filter>
     </div>
     <div class="main-left-div">
-      <app-users-list></app-users-list>
+      <app-users-list (onClickRow)="handleOnClickRowTable($event)"></app-users-list>
     </div>
   </div>
   <div class="right-div">
-    <app-user-details></app-user-details>
+    <app-user-details
+    *ngIf="userSelected" 
+    [userSelected]="userSelected"
+    (onClickCloseUserDetails)="onClickCloseUserDetails()">
+  </app-user-details>
   </div>
 </div>
