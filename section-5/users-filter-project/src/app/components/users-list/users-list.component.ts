@@ -10,7 +10,6 @@ export class UsersListComponent {
 
   displayedColumns: string[] = ['nome', 'dataCadastro', 'ativo'];
   
-  
   @Input({ required: true }) usersList: IUser[] = []
 
   @Output('onClickRow') onClickRowEmitt = new EventEmitter<IUser>();

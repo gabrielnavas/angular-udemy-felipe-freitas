@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.resetComponent();
-    this.loadUserList();
+    setTimeout(() =>  this.loadUserList(), 1);
   }
 
   loadUserList() {
