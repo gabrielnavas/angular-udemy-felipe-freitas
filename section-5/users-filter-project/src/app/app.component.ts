@@ -50,9 +50,11 @@ export class AppComponent implements OnInit {
     let filteredList: IUser[] = [];
 
     filteredList = this.filterUserListByName(filterOptions.name, userList);
+    filteredList = this.filterUserListByStatus(filterOptions.status, filteredList);
 
     return filteredList;
   }
+
   private filterUserListByName(name: string | undefined, userList: IUser[]): IUser[] {
     const NAME_NOT_TYPPED = name === undefined;
     if (NAME_NOT_TYPPED) {
@@ -60,6 +62,15 @@ export class AppComponent implements OnInit {
     }
 
     return userList.filter(user => user.nome.toLocaleLowerCase().includes(name.toLocaleLowerCase()));
+  }
+
+  private filterUserListByStatus(status: boolean | undefined, userList: IUser[]): IUser[] {
+    const STATUS_NOT_TYPPED = status === undefined;
+    if (STATUS_NOT_TYPPED) {
+      return userList;
+    }
+
+    return userList.filter(user => user.ativo === status);
   }
 
   private resetComponent() {
