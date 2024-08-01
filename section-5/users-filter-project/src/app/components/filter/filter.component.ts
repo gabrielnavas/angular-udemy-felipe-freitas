@@ -27,9 +27,6 @@ export class FilterComponent implements OnInit {
   }
 
   private initFilterOptions() {
-    const now = new Date();
-    const oneMonth = new Date(now.setMonth(now.getMonth() + 1));
-
     this.filterOptions = {
       name: undefined,
       startDate: undefined,
