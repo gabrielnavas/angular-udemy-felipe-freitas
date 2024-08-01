@@ -5,7 +5,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PhonePipe implements PipeTransform {
   transform(phone: string): string {
-    return this.isValidPhone(phone) ? this.formatPhone(phone) : 'Telefone inválido ou indisponível';
+    return this.isValidPhone(phone) 
+      ? this.formatPhone(phone) 
+      : this.generatePhoneInvalidMessage();
+  }
+
+  private generatePhoneInvalidMessage() {
+    return 'Telefone inválido ou indisponível';
   }
 
   private formatPhone(phone: string) {
@@ -16,11 +22,15 @@ export class PhonePipe implements PipeTransform {
   }
 
   private makeMainPartPhone(phone: string) {
-    return this.isCellPhone(phone) ? phone.substring(2, 7) : phone.substring(2, 6);
+    return this.isCellPhone(phone) 
+    ? phone.substring(2, 7) 
+    : phone.substring(2, 6);
   }
 
   private makesuffixPhone(phone: string) {
-    return this.isCellPhone(phone) ? phone.substring(7) : phone.substring(6);
+    return this.isCellPhone(phone) 
+      ? phone.substring(7) 
+      : phone.substring(6);
   }
 
   private makeAreaCode(phone: string) {
@@ -36,6 +46,12 @@ export class PhonePipe implements PipeTransform {
   }
 
   private isValidPhone(phone: string) {
-    return phone && (this.isNormalPhone(phone) || this.isCellPhone(phone))
+    return (
+      phone 
+      && (
+          this.isNormalPhone(phone) 
+          || this.isCellPhone(phone)
+        )
+      );
   }
 }
