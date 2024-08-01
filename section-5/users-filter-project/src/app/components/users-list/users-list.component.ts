@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { UsersList } from '../../data/users-list';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IUser } from '../../interfaces/user/user.interface';
 
 @Component({
@@ -10,7 +9,9 @@ import { IUser } from '../../interfaces/user/user.interface';
 export class UsersListComponent {
 
   displayedColumns: string[] = ['nome', 'dataCadastro', 'ativo'];
-  usersList: IUser[] = [...UsersList]
+  
+  
+  @Input({ required: true }) usersList: IUser[] = []
 
   @Output('onClickRow') onClickRowEmitt = new EventEmitter<IUser>();
 

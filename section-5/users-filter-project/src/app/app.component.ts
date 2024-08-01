@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IUser } from './interfaces/user/user.interface';
+import { UsersList } from './data/users-list';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,15 @@ export class AppComponent {
   userSelected: IUser = {} as IUser;
   showUserDetails = false;
 
+  userList: IUser[] = [];
+
   constructor() {
     this.resetComponent();
+    // this.loadUserList();
+  }
+
+  loadUserList() {
+    this.userList = [...UsersList];
   }
 
   handleOnClickRowTable(user: IUser) {

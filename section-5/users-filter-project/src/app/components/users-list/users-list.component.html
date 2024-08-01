@@ -1,5 +1,5 @@
 <div class="users-list">
-  <table mat-table [dataSource]="usersList">
+  <table *ngIf="usersList.length > 0" mat-table [dataSource]="usersList">
     <!-- Name Column -->
     <ng-container matColumnDef="nome">
       <th mat-header-cell *matHeaderCellDef> Nome </th>
@@ -21,4 +21,8 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+  
+  <div class="users-list__empty-list">
+    Nenhum usuário encontrado.
+  </div>
 </div>
