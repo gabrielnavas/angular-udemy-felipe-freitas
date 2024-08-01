@@ -12,6 +12,7 @@ export class FilterComponent implements OnInit {
   filterOptions: IFilterOptions = {} as IFilterOptions;
 
   statusList = [
+    { description: 'Todos', value: undefined },
     { description: 'Ativo', value: true },
     { description: 'Inative', value: false },
   ]
