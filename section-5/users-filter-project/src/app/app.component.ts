@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IUser } from './interfaces/user/user.interface';
 import { UsersList } from './data/users-list';
 
@@ -7,15 +7,15 @@ import { UsersList } from './data/users-list';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   userSelected: IUser = {} as IUser;
   showUserDetails = false;
 
   userList: IUser[] = [];
 
-  constructor() {
+  ngOnInit(): void {
     this.resetComponent();
-    // this.loadUserList();
+    this.loadUserList();
   }
 
   loadUserList() {
