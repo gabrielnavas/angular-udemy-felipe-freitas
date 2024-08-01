@@ -13,10 +13,8 @@ export class AppComponent implements OnInit {
   userList: IUser[] = [];
   userListFiltered: IUser[] = [];
 
-
   userSelected: IUser = {} as IUser;
   showUserDetails = false;
-
 
   ngOnInit(): void {
     this.resetComponent();
@@ -81,12 +79,15 @@ export class AppComponent implements OnInit {
       return userList;
     }
 
+    return this.filterUserListByDateWithInterval(endDate, startDate, userList);
+  }
+
+  private filterUserListByDateWithInterval(endDate: Date, startDate: Date, userList: IUser[]) {
     return userList.filter(user => {
       const dataCadastro: Date = new Date(user.dataCadastro);
-      const dataEndMoreOneDay = new Date().setDate(endDate.getDate() + 1);
-      const interval = { start: startDate, end: dataEndMoreOneDay };
+      const interval = { start: startDate, end: endDate };
       return isWithinInterval(dataCadastro, interval);
-    })
+    });
   }
 
   private resetComponent() {

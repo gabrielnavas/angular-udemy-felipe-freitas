@@ -13,7 +13,7 @@ export class FilterComponent implements OnInit {
 
   statusList = [
     { description: 'Ativo', value: true },
-    { description: 'Inative', value: false },
+    { description: 'Inativo', value: false },
   ]
 
   ngOnInit(): void {
