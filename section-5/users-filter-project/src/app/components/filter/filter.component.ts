@@ -12,7 +12,6 @@ export class FilterComponent implements OnInit {
   filterOptions: IFilterOptions = {} as IFilterOptions;
 
   statusList = [
-    { description: 'Todos', value: undefined },
     { description: 'Ativo', value: true },
     { description: 'Inative', value: false },
   ]
@@ -23,6 +22,11 @@ export class FilterComponent implements OnInit {
 
   onClickFilter() {
     this.onCLickFilterEmitt.emit(this.filterOptions);
+  }
+
+  onClickResetFilter() {
+    this.initFilterOptions();
+    this.onClickFilter();
   }
 
   private initFilterOptions() {
