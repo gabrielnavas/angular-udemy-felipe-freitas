@@ -31,10 +31,10 @@ export class FilterComponent implements OnInit {
     const oneMonth = new Date(now.setMonth(now.getMonth() + 1));
 
     this.filterOptions = {
-      name: '',
-      startDate: now,
-      endDate: oneMonth,
-      status: false,
+      name: undefined,
+      startDate: undefined,
+      endDate: undefined,
+      status: undefined,
     }
   }
 }

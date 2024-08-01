@@ -8,7 +8,7 @@
     </div>
     <div class="form__date-picker">
       <mat-form-field>
-        <mat-label>Enter a date range</mat-label>
+        <mat-label>Data inicial e Data final</mat-label>
         <mat-date-range-input [rangePicker]="picker">
           <input matStartDate placeholder="Start date" [(ngModel)]="filterOptions.startDate"
             (ngModelChange)="dateSelected($event)" name="startDate">
