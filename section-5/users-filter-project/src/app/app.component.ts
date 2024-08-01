@@ -18,11 +18,7 @@ export class AppComponent implements OnInit {
   showUserDetails = false;
 
   ngOnInit(): void {
-    this.resetComponent();
-    setTimeout(() => {
-      this.loadUserList();
-      this.loadUserListFiltered();
-    }, 1);
+    this.initComponent();
   }
 
   loadUserList() {
@@ -39,7 +35,7 @@ export class AppComponent implements OnInit {
   }
 
   onClickCloseUserDetails() {
-    this.resetComponent();
+    this.initComponent();
   }
 
   onClickFilter(filterOptions: IFilterOptions) {
@@ -55,8 +51,13 @@ export class AppComponent implements OnInit {
 
     return filteredList;
   }
-  private resetComponent() {
+  private initComponent() {
     this.userSelected = {} as IUser;
     this.showUserDetails = false;
+
+    setTimeout(() => {
+      this.loadUserList();
+      this.loadUserListFiltered();
+    }, 1);
   }
 }
