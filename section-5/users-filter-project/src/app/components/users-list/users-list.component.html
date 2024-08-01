@@ -9,7 +9,7 @@
     <!-- Date of Sign Column -->
     <ng-container matColumnDef="dataCadastro">
       <th mat-header-cell *matHeaderCellDef> Data de Cadastro </th>
-      <td mat-cell *matCellDef="let row" class="users-list__item" (click)="onSelectedRow(row)">{{ row.dataCadastro | date:'dd/MM/yyyy'  }}</td>
+      <td mat-cell *matCellDef="let row" class="users-list__item" (click)="onSelectedRow(row)">{{ row.dataCadastro | date:'dd/MM/yyyy' | dashIfEmpty  }}</td>
     </ng-container>
   
     <!-- Status Column -->
