@@ -7,13 +7,24 @@ import { IUser } from './interfaces/user/user.interface';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  userSelected: IUser | undefined = undefined;
+  userSelected: IUser = {} as IUser;
+  showUserDetails = false;
+
+  constructor() {
+    this.resetComponent();
+  }
 
   handleOnClickRowTable(user: IUser) {
     this.userSelected = user;
+    this.showUserDetails = true;
   }
 
   onClickCloseUserDetails() {
-    this.userSelected = undefined;
-  } 
+    this.resetComponent();
+  }
+
+  private resetComponent() {
+    this.userSelected = {} as IUser;
+    this.showUserDetails = false;
+  }
 }

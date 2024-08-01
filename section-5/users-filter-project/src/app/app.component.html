@@ -9,7 +9,7 @@
   </div>
   <div class="right-div">
     <app-user-details
-    *ngIf="userSelected" 
+    *ngIf="showUserDetails" 
     [user]="userSelected"
     (onClickCloseUserDetails)="onClickCloseUserDetails()">
   </app-user-details>
