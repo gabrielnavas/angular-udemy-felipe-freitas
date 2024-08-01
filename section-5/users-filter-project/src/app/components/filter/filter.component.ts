@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { IFilterOptions } from '../../interfaces/filter-options.interface';
 
 @Component({
@@ -7,6 +7,8 @@ import { IFilterOptions } from '../../interfaces/filter-options.interface';
   styleUrl: './filter.component.scss'
 })
 export class FilterComponent implements OnInit {
+  @Output('onClickFilter') onCLickFilterEmitt = new EventEmitter<IFilterOptions>();
+
   filterOptions: IFilterOptions = {} as IFilterOptions;
 
   statusList = [
@@ -19,11 +21,7 @@ export class FilterComponent implements OnInit {
   }
 
   onClickFilter() {
-    console.log(this.filterOptions)
-  }
-
-  dateSelected(event: any) {
-    console.log(event);
+    this.onCLickFilterEmitt.emit(this.filterOptions);
   }
 
   private initFilterOptions() {

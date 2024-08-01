@@ -10,8 +10,7 @@
       <mat-form-field>
         <mat-label>Data inicial e Data final</mat-label>
         <mat-date-range-input [rangePicker]="picker">
-          <input matStartDate placeholder="Start date" [(ngModel)]="filterOptions.startDate"
-            (ngModelChange)="dateSelected($event)" name="startDate">
+          <input matStartDate placeholder="Start date" [(ngModel)]="filterOptions.startDate" name="startDate">
           <input matEndDate placeholder="End date" [(ngModel)]="filterOptions.endDate" name="endDate">
         </mat-date-range-input>
         <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
@@ -23,9 +22,7 @@
       <mat-form-field>
         <mat-label>Status</mat-label>
         <mat-select [(ngModel)]="filterOptions.status" name="status">
-          <mat-option 
-            *ngFor="let status of statusList" 
-            [value]="status.value">
+          <mat-option *ngFor="let status of statusList" [value]="status.value">
             {{status.description}}
           </mat-option>
         </mat-select>

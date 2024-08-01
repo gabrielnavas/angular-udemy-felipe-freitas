@@ -1,12 +1,12 @@
 <div class="container">
   <div class="left-container">
     <div class="top-div">
-      <app-filter></app-filter>
+      <app-filter (onClickFilter)="onClickFilter($event)"></app-filter>
     </div>
     <div class="main-left-div">
       <app-users-list
-        [usersList]="userList" 
-        (onClickRow)="handleOnClickRowTable($event)">
+        [usersList]="userListFiltered" 
+        (onClickRow)="onClickRowTable($event)">
       </app-users-list>
     </div>
   </div>
