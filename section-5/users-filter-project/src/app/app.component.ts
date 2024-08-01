@@ -3,7 +3,7 @@ import { IUser } from './interfaces/user/user.interface';
 import { UsersList } from './data/users-list';
 import { IFilterOptions } from './interfaces/filter-options.interface';
 import { isWithinInterval } from 'date-fns';
-import { filterUserListByDate, filterUserListByName, filterUserListByStatus } from './utils/filter-user-list';
+import { filterUserList } from './utils/filter-user-list';
 
 @Component({
   selector: 'app-root',
@@ -21,14 +21,6 @@ export class AppComponent implements OnInit {
     this.initComponent();
   }
 
-  loadUserList() {
-    this.userList = [...UsersList];
-  }
-
-  loadUserListFiltered() {
-    this.userListFiltered = [...this.userList]
-  }
-
   onClickRowTable(user: IUser) {
     this.userSelected = user;
     this.showUserDetails = true;
@@ -39,18 +31,9 @@ export class AppComponent implements OnInit {
   }
 
   onClickFilter(filterOptions: IFilterOptions) {
-    this.userListFiltered = this.filterUserList(filterOptions, this.userList);
+    this.userListFiltered = filterUserList(filterOptions, this.userList);
   }
 
-  private filterUserList(filterOptions: IFilterOptions, userList: IUser[]): IUser[] {
-    let filteredList: IUser[] = [];
-
-    filteredList = filterUserListByName(filterOptions.name, userList);
-    filteredList = filterUserListByStatus(filterOptions.status, filteredList);
-    filteredList = filterUserListByDate(filterOptions.startDate, filterOptions.endDate, filteredList);
-
-    return filteredList;
-  }
   private initComponent() {
     this.userSelected = {} as IUser;
     this.showUserDetails = false;
@@ -59,5 +42,13 @@ export class AppComponent implements OnInit {
       this.loadUserList();
       this.loadUserListFiltered();
     }, 1);
+  }
+
+  private loadUserList() {
+    this.userList = [...UsersList];
+  }
+
+  private loadUserListFiltered() {
+    this.userListFiltered = [...this.userList]
   }
 }
