@@ -13,7 +13,7 @@
     </mat-list-item>
     <mat-divider></mat-divider>
     <mat-list-item>
-      <span class="mat-h2">Telefone: </span><span class="mat-h3">({{ user.telefone.substring(0, 2) }}) {{ user.telefone.substring(2, 7) }} - {{ user.telefone.substring(7) }} </span>
+      <span class="mat-h2">Telefone: </span><span class="mat-h3">{{ user.telefone | phone }} </span>
     </mat-list-item>
     <mat-divider></mat-divider>
     <mat-list-item>
