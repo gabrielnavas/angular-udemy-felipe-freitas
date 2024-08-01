@@ -3,13 +3,13 @@
     <!-- Name Column -->
     <ng-container matColumnDef="nome">
       <th mat-header-cell *matHeaderCellDef> Nome </th>
-      <td mat-cell *matCellDef="let row" class="users-list__item" (click)="onSelectedRow(row)">{{ row.nome }}</td>
+      <td mat-cell *matCellDef="let row" class="users-list__item" (click)="onSelectedRow(row)">{{ row.nome | dashIfEmpty }}</td>
     </ng-container>
   
     <!-- Date of Sign Column -->
     <ng-container matColumnDef="dataCadastro">
       <th mat-header-cell *matHeaderCellDef> Data de Cadastro </th>
-      <td mat-cell *matCellDef="let row" class="users-list__item" (click)="onSelectedRow(row)">{{ row.dataCadastro  | date:'dd/MM/yyyy'  }}</td>
+      <td mat-cell *matCellDef="let row" class="users-list__item" (click)="onSelectedRow(row)">{{ row.dataCadastro | date:'dd/MM/yyyy'  }}</td>
     </ng-container>
   
     <!-- Status Column -->
