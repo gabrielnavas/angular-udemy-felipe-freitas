@@ -1,0 +1,19 @@
+<div class="pai" *ngIf="true">
+  Pai: <input #inputPai ngModel />
+  Pai: {{ inputFilho.value }}
+
+  <div class="filho">
+    Filho: <input #inputFilho ngModel />
+    Filho: {{ inputPai.value }}
+  </div>
+</div>
+
+<div class="pai" *ngIf="true">
+  Pai: <input #inputPai ngModel />
+  <!-- Pai: {{ inputFilho.value }} -->
+
+  <div class="filho" *ngIf="true"> <!-- cria um contexto -->
+    Filho: <input #inputFilho ngModel />
+    Filho: {{ inputPai.value }}
+  </div>
+</div>
