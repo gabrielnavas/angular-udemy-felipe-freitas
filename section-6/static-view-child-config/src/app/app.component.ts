@@ -11,14 +11,17 @@ export class AppComponent implements OnInit, AfterViewInit {
   meuInputEl!: ElementRef<HTMLInputElement>;
 
   constructor() {
+    console.log('constructor');
     console.log(this.meuInputEl);
   }
 
   ngOnInit(): void {
+    console.log('ngOnInit');
     console.log(this.meuInputEl);
   }
 
   ngAfterViewInit(): void {
+    console.log('ngAfterViewInit');
     console.log(this.meuInputEl);
   }
 }
