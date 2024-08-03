@@ -23,5 +23,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     console.log('ngAfterViewInit');
     console.log(this.meuInputEl);
+    this.meuInputEl.nativeElement.focus();
   }
 }
