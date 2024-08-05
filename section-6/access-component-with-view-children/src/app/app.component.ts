@@ -11,15 +11,70 @@ export class AppComponent implements AfterViewInit {
     'button 2',
     'button 3',
   ]
-  
-  @ViewChildren('meuButton') 
+
+  index = "";
+
+  @ViewChildren('meuButton')
   buttonsEl!: QueryList<ElementRef<HTMLButtonElement>>;
-  
+
   ngAfterViewInit(): void {
-    for(let i=0 ; i < this.buttonsEl.length; i++) {
+    this.colorRedOnButtons();
+    this.updateIfListUpdate()
+  }
+  
+  updateIfListUpdate() {
+    this.buttonsEl.changes.subscribe(result => {
+      console.log(result);
+    })
+  }
+
+  private colorRedOnButtons() {
+    for (let i = 0; i < this.buttonsEl.length; i++) {
       const button = this.buttonsEl.get(i);
-      const buttonText = button?.nativeElement.textContent
-      console.log(buttonText);
+      if (button !== undefined) {
+        button.nativeElement.style.color = 'red';
+      }
+    }
+  }
+
+  changeColor(event: MouseEvent) {
+    const btnElement = event.target as HTMLButtonElement;
+    btnElement.style.backgroundColor = 'orange';
+    btnElement.style.color = 'white';
+  }
+
+  resetButtons() {
+    this.buttonsEl.forEach(button => {
+      button.nativeElement.style.backgroundColor = '';
+      button.nativeElement.style.color = 'black';
+    })
+  }
+
+  greenOnFirst() {
+    this.buttonsEl.first.nativeElement.style.backgroundColor = 'green';
+  }
+
+  pinkOnFirst() {
+    this.buttonsEl.last.nativeElement.style.backgroundColor = 'yellow';
+  }
+
+  drawByIndex() {
+    const button = this.buttonsEl.get(Number(this.index));
+    if (button !== undefined) {
+      button.nativeElement.style.backgroundColor = 'blue';
+    }
+  }
+
+  drawByClass() {
+    const button = this.buttonsEl.find(button => button.nativeElement.className === `button-${this.index}`);
+    if (button !== undefined) {
+      button.nativeElement.style.backgroundColor = 'cyan';
+    }
+  }
+
+  removeFirst() {
+    if (Number(this.index) < this.buttonList.length) {
+      this.buttonList.shift();
     }
   }
 }

@@ -1,6 +1,31 @@
 <button 
-  #meuButton
-  *ngFor="let button of buttonList" 
-  type="button">
+  class="button-{{ i }}"
+  #meuButton 
+  *ngFor="let button of buttonList; let i = index" 
+  type="button" 
+  (click)="changeColor($event)">
   {{ button }}
 </button>
+
+<div>
+  <button (click)="greenOnFirst()">Pintar o primero</button>
+  <button (click)="pinkOnFirst()">Pintar o último</button>
+</div>
+
+<div>
+  <input type="text" [(ngModel)]="index" />
+  <button (click)="drawByIndex()">Pintar por index</button>
+</div>
+
+<div>
+  <input type="text" [(ngModel)]="index" />
+  <button (click)="drawByClass()">Pintar por classes</button>
+</div>
+
+<div>
+  <button (click)="removeFirst()">Remover primeiro</button>
+</div>
+
+<div>
+  <button (click)="resetButtons()">Reset botões</button>
+</div>
